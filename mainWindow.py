@@ -2,6 +2,7 @@ import sys
 import os
 
 import chipsec_main
+
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from modules import modules
@@ -21,51 +22,31 @@ class MainWindow(QMainWindow):
         exitAction.setStatusTip('Exit application')
         exitAction.triggered.connect(qApp.quit)
 
-        aboutMeAction = QAction(QIcon('about_me.png'), 'About Developer', self)
-        aboutMeAction.setStatusTip('About project and developer')
-        aboutMeAction.triggered.connect(self.showAboutMe)
-
         # Menubar
         menubar = self.menuBar()
 
         fileMenu = menubar.addMenu('File')
         fileMenu.addAction(exitAction)
 
-        helpMenu = menubar.addMenu('Help')
-        helpMenu.addAction(aboutMeAction)
-
         form = FormWidget(self)
         form.setFont(QFont('SansSerif', 7))
         self.setCentralWidget(form)
-        
+
         self.setWindowTitle('Chipsec')
         self.showMaximized()
 
     def closeEvent(self, event):
-        pass
-        # reply = QMessageBox.question(
-        #     self,
-        #     'Message',
-        #     "Are you sure to quit?",
-        #     QMessageBox.Yes | QMessageBox.No,
-        #     QMessageBox.No
-        # )
-        # if reply == QMessageBox.Yes:
-        #     event.accept()
-        # else:
-        #     event.ignore()
-
-    def showAboutMe(self):
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Emad Helmi")
-        msg.setInformativeText(
-            "Email:" + "\n" + "\t" + "s.emad.helmi@gmail.com" + "\n"
-            "Telegram:" + "\n" + "\t" + "@Emad.Helmi"
+        reply = QMessageBox.question(
+            self,
+            'Message',
+            "Are you sure to quit?",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No
         )
-        msg.setWindowTitle("About the developer")
-        msg.resize(800, 600)
-        retval = msg.exec_()
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
 
 class FormWidget(QWidget):
@@ -95,7 +76,7 @@ class FormWidget(QWidget):
         self.b2.clicked.connect(
             partial(self.change_all, True)
         )
-        
+
         top_layout.addWidget(self.b1)
         top_layout.addWidget(self.b2)
 
@@ -117,7 +98,6 @@ class FormWidget(QWidget):
 
         # Bottom layout
         bottom_layout = QVBoxLayout()
-        bottom_layout.setSpacing(0)
         log_lable = QLabel("Output:")
         log_lable.setFont(QFont('SansSerif', 15))
         self.text_edit = QTextBrowser()
@@ -125,6 +105,9 @@ class FormWidget(QWidget):
 
         btn_layout = QHBoxLayout()
         btn_layout.setAlignment(Qt.AlignRight)
+
+        sv_layout = QHBoxLayout()
+        sv_layout.setAlignment(Qt.AlignRight)
         save_btn = QPushButton("Save Results")
         save_btn.clicked.connect(
             partial(self.save)
@@ -142,7 +125,7 @@ class FormWidget(QWidget):
 
     def change_all(self, state):
         self.all = state
-    
+
     def call_run(self, custom_modules):
         result = str()
         if os.path.exists("log.txt"):
@@ -168,7 +151,15 @@ class FormWidget(QWidget):
             self.text_edit.setText(result)
 
     def save(self):
-        f = open("log.txt", "w")
+        directory = str(
+            QFileDialog.getSaveFileName(
+                self,
+                'Select a file for saving the result',
+                '.',
+                selectedFilter='*.txt'
+            )
+        )
+        f = open(directory, "w")
         f.write(str(self.text_edit.toPlainText()))
         f.close()
 
@@ -287,6 +278,7 @@ class Modules(QWidget):
         # print "CHECKED:"
         # print self.checked_modules
         # print "$" * 10
+
 
 def main():
 
