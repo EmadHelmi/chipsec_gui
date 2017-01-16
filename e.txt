@@ -1,0 +1,9 @@
+################################################################
+##                                                            ##
+##  CHIPSEC: Platform Hardware Security Assessment Framework  ##
+##                                                            ##
+################################################################
+[CHIPSEC] Version 1.2.5
+[CHIPSEC] Arguments: -m common.bios_wp -l e.txt -x x.txt
+ERROR: Could not start the OS Helper, are you running as Admin/root?
+           Message: "Command '['insmod', '/home/emadhelmi/myWorks/cetec/chipsec_gui/chipsec/helper/linux/chipsec.ko', '']' returned non-zero exit status 1"

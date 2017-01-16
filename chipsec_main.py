@@ -502,7 +502,8 @@ class ChipsecMain:
             print str(err)
             self.usage()
             return ExitCode.EXCEPTION
-
+        print opts
+        print args
         for o, a in opts:
             if o in ("-v", "--verbose"):
                 logger().VERBOSE = True
