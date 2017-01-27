@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<testsuites>
+	<testsuite errors="0" failures="0" name="emad" skipped="0" tests="1" time="0.00036">
+		<properties>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Intel Xeon Processor E3-1200 (Sandy Bridge CPU, C200 Series PCH), VID: 8086, DID: 0108"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+			<property name="OS" value="Linux 4.4.0-59-generic #80-Ubuntu SMP Fri Jan 6 17:47:47 UTC 2017 x86_64"/>
+			<property name="Platform" value="Mobile 3rd Generation Core Processor (Ivy Bridge CPU / Panther Point PCH), VID: 8086, DID: 0154"/>
+			<property name="CHIPSEC" value="1.2.5"/>
+		</properties>
+		<testcase classname="chipsec.modules.remap" name="Memory Remapping Configuration" time="0.00036">
+			<pass type="pass"/>
+			<system-out>[pci] reading B/D/F: 0/0/0, offset: 0x94, value: 0x00000001
+[pci] reading B/D/F: 0/0/0, offset: 0x90, value: 0x7F000001
+[pci] reading B/D/F: 0/0/0, offset: 0x9C, value: 0x00000001
+[pci] reading B/D/F: 0/0/0, offset: 0x98, value: 0xAF500001
+[pci] reading B/D/F: 0/0/0, offset: 0xAC, value: 0x00000001
+[pci] reading B/D/F: 0/0/0, offset: 0xA8, value: 0xAF600001
+[pci] reading B/D/F: 0/0/0, offset: 0xBC, value: 0xCFA00001
+[pci] reading B/D/F: 0/0/0, offset: 0xB8, value: 0xCB000001
+[*] Registers:
+[*]   TOUUD     : 0x00000001AF600001
+[*]   REMAPLIMIT: 0x00000001AF500001
+[*]   REMAPBASE : 0x000000017F000001
+[*]   TOLUD     : 0xCFA00001
+[*]   TSEGMB    : 0xCB000001
+
+[*] Memory Map:
+[*]   Top Of Upper Memory: 0x00000001AF600000
+[*]   Remap Limit Address: 0x00000001AF5FFFFF
+[*]   Remap Base Address : 0x000000017F000000
+[*]   4GB                : 0x0000000100000000
+[*]   Top Of Low Memory  : 0x00000000CFA00000
+[*]   TSEG (SMRAM) Base  : 0x00000000CB000000
+
+[*] checking memory remap configuration..
+[*]   Memory Remap is enabled
+[+]   Remap window configuration is correct: REMAPBASE &lt;= REMAPLIMIT &lt; TOUUD
+[+]   All addresses are 1MB aligned
+[*] checking if memory remap configuration is locked..
+[+]   TOUUD is locked
+[+]   TOLUD is locked
+[+]   REMAPBASE and REMAPLIMIT are locked
+[+] PASSED: Memory Remap is configured correctly and locked
+</system-out>
+		</testcase>
+	</testsuite>
+</testsuites>
