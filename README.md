@@ -1,3 +1,25 @@
+صفحهی راهنمای ترجمهها chipsec_gui:
+
+chipsec_gui یک رابط کاربری گرافیکی ساده برای ابزار سیستم عامل CHIPSEC است. ادامه به CHIPSEC صفحهی راهنمای ترجمهها برای اطلاعات بیشتر بر روی نرم افزار را از تیم اینتل CHIPSEC.
+
+وابستگی:
+
+chipsec_gui نیاز به SIP و PyQt4 (و همچنین وابستگیهای خود را برای تدوین.) به منظور استفاده از رابط کاربری گرافیکی.
+
+SIP کد منبع را می توان در یافت: (http://www.riverbankcomputing.com/software/sip/)
+
+PyQt4 کد منبع را می توان در یافت: (https://riverbankcomputing.com/software/pyqt/intro)
+
+
+
+شروع GUI:
+دایرکتوری این مخزن به در خط فرمان استخراج شد وارد کنید، سپس این دستور را اجرا در ترمینال. "پایتون mainWindow.py"
+  
+  
+  
+  
+  CHIPSEC صفحهی راهنمای ترجمهها:
+  
 CHIPSEC: Platform Security Assessment Framework
 ===============================================
 
